@@ -1,0 +1,48 @@
+<?xml version="1.0"?><story xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="story.xsd" title="Histoire sans fin">
+    <init></init>
+    <step id="BEGIN" type="multiChoice">
+        <title><![CDATA[BEGIN]]></title>
+        <description><![CDATA[Welcome to the game example.]]></description>
+        <possibility>
+            <choice nextStep="s1">Go to the Riddle Step.</choice>
+            <choice nextStep="s2">Go to the memory.</choice>
+            <choice nextStep="s4">Make me win.</choice>
+            <choice nextStep="s5">Make me loose.</choice>
+            <choice nextStep="s3">Go to the Rich Text multiChoice.</choice>
+        </possibility>
+    </step>
+    <step id="s1" type="riddle">
+        <title><![CDATA[Riddle]]></title>
+        <description><![CDATA[I will be yesterday, I was tomorrow.]]></description>
+        <hint>It's easy. No hint.</hint>
+        <possibility>
+            <choice nextStep="s5">Yesterday</choice>
+            <choice nextStep="s5">Tomorrow</choice>
+            <choice nextStep="BEGIN">Today</choice>
+        </possibility>
+    </step>
+    <step id="s2" type="memory">
+        <title><![CDATA[Memory]]></title>
+        <description><![CDATA[Look for the pairs]]></description>
+        <theme>prof</theme>
+        <difficulty>3</difficulty>
+        <nextStep value="BEGIN"/>
+    </step>
+    <step id="s3" type="multiChoice">
+        <title><![CDATA[Step with HTML Tag]]></title>
+        <description><![CDATA[<b>This</b> step has a <i>html</i> tag and just <b>one</b> option, so choice next.<img class="img-responsive" src="http://science-all.com/images/wallpapers/cute-cat-pictures/cute-cat-pictures-19.jpg" />]]></description>
+        <possibility>
+            <choice nextStep="BEGIN">Back.</choice>
+        </possibility>
+    </step>
+    <step id="s4" type="end">
+        <title><![CDATA[This is the no-fake happy ending!]]></title>
+        <description><![CDATA[Congrats!]]></description>
+        <win value="true"/>
+    </step>
+    <step id="s5" type="end">
+        <title><![CDATA[This is the happy ending!]]></title>
+        <description><![CDATA[I'm sorry.]]></description>
+        <win value="false"/>
+    </step>
+</story>

@@ -1,0 +1,7 @@
+<storyloader ng-if="!story.isLoaded"></storyloader>
+<div class="show" ng-if="story.isLoaded">
+    <div ng-include="'views/story-errors.html'"></div>
+    <h1>{{story.name}}</h1>
+    <story-graph class="col-md-12"></story-graph>
+    <story-edit readonly></story-edit>
+</div>

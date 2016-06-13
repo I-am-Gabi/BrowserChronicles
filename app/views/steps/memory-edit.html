@@ -1,0 +1,14 @@
+<div>
+    <label>
+        Next step:
+        <select ng-options="stepsIds as stepsIds for (stepsIds, value) in story.steps" ng-model="selected" ng-init="selected = step.next.next" ng-change="stepEdit.setNext(step, selected);" required></select>
+    </label>
+    <label>
+        Number of pair:
+        <input type="number" min="1" ng-model="step.difficulty"/>
+    </label>
+    <label>
+        Theme:
+        <select ng-options="value as value for value in stepEdit.avaiableThemes" ng-model="step.theme" required></select>
+    </label>
+</div>

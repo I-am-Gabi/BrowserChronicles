@@ -1,0 +1,29 @@
+<form role="form" ng-if="selectedNode !== undefined">
+    <p>    <button class="btn btn-danger btn-sm" ng-if="selectedNode !== 'BEGIN'" ng-click="story.removeStep(selectedNode);"><span class="glyphicon glyphicon-remove"></span>Remove step</button>
+        This step is of type {{story.steps[selectedNode].type}}.</p>
+    <label for="stepId">Step ID:</label>
+    <input class="form-control" id="stepId" type="text" ng-model="selectedNode" ng-focus="oldId = selectedNode" ng-blur="story.changeId(oldId, selectedNode)" ng-disabled="readonly"/>
+    <label for="stepTitle">Step title:</label>
+    <input class="form-control form-inline" id="stepTitle" type="text" ng-model="story.steps[selectedNode].title" ng-disabled="readonly"/>
+    <label for="stepDescription">Step description:</label>
+    <textarea class="form-control" id="stepDescription" ng-model="story.steps[selectedNode].description" style="resize: vertical;height: 150px;" ng-disabled="readonly"></textarea>
+</form>
+<div ng-if="!readonly">
+    <div ng-if="selectedNode === undefined">
+        <form role="form" style="form-inline" ng-submit="story.addStep(newStep.id, newStep.type) && selectNode(newStep.id);">
+            <label>
+                New id:
+                <input type="text" ng-model="newStep.id" placeholder="Create an id for a new step." required/>
+            </label>
+            <label>
+                New step type:
+                <select class="form-control" ng-options="stepsTypes as stepsTypes for (stepsTypes, value) in stepTypes" ng-model="newStep.type" ng-init="newStep.type = Object.keys(stepTypes)[0]" required></select>
+            </label>
+            <input class="btn btn-default" type="submit" value="Create new step"/>
+        </form>
+    </div>
+    <div ng-if="stepEdit.templateEdit !== undefined" ng-include="stepEdit.templateEdit"></div>
+</div>
+<div class="edit">
+    <a class="btn btn-default" ng-click="downloadFile()" ng-href="{{ fileUrl}}" download="{{story.name}}.xml"><i class="glyphicon glyphicon-download-alt"></i>Download this story</a>
+</div>

@@ -1,0 +1,14 @@
+<div class="col-md-12 lead subtext">Pairs left to match: {{currentStepHandler.game.unmatchedPairs}}</div>
+<div class="col-md-12 message"><h3>{{currentStepHandler.game.message}}</h3></div>
+
+<div class="col-md-2  col-sm-4" ng-repeat="card in currentStepHandler.game.deck" ng-click="currentStepHandler.game.flipTile(card)">
+    <div class="containerTest">
+        <div class="card" ng-class="{
+                                flipped: card.flipped
+                            }">
+            <img class="front img-responsive" ng-src="images/{{currentStepHandler.theme}}/back.png">
+            <img class="back img-responsive" ng-src="images/{{card.title}}.png">
+        </div>
+    </div>
+
+</div>

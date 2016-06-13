@@ -1,0 +1,6 @@
+<div ng-if="step.type === 'end'" ng-switch="step.won">
+    <h2 ng-switch-when="true" class="text-success text-center">You won!</h2>
+    <h2 ng-switch-default class="text-danger text-center">You lost!</h2>
+    <p class="text-center">And you managed to do that in only {{totalSteps}} steps!</p>
+    <p class="text-center">The best you could have done to any winning node is {{story.shortestPath.length - 1}} steps.</p>
+</div>

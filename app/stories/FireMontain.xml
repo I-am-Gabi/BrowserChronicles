@@ -1,0 +1,955 @@
+<?xml version="1.0"?>
+<story xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="story.xsd" title="Le sorcier et la montagne de feu (adapted)">
+    <init>Story n°=0</init>
+    <step id="BEGIN" type="multiChoice">
+        <title>East or West</title>
+        <description>Your quest is now starting. After two days of walk you finally reach the mountain of fire.
+            What an ominous sigh, the moutain itself seems menacing. Its side seems to have been
+            created by the devil himself, lots of crags would scare away even the most seasoned adventurers.
+            Atop the mountain you can faintly see a sinister red spreading everywhere -most likely th flaura-
+            Crossing the clearing you head straight for the cave acting as an entrance to the moutain.
+            It's dark and damp. Only 200 meter inside you are already faced with the path spreading itself in two.
+            Where will you go ?
+        </description>
+        <possibility>
+            <choice nextStep="s71">Go West.</choice>
+            <choice nextStep="s278">Go East.</choice>
+        </possibility>
+    </step>
+    <step id="s71" type="multiChoice">
+        <title>First encounter... Or is it ?</title>
+        <description>After turning west, you walk another 100 meter before coming to a stop before
+            what seems to be an improvised guardpost. Discretly you take a quick peek inside and
+            see an odd creature not unlike an imp loudly snoring. What should you do ?
+        </description>
+        <possibility>
+            <choice nextStep="s301">It's loudly snoring, I can walk past it if I'm careful.</choice>
+            <choice nextStep="s248">Better not take any chances, I'll make a detour around it.</choice>
+        </possibility>
+    </step>
+    <step id="s278" type="multiChoice">
+        <title>A closed door</title>
+        <description>The path come to a stop before a locked door. You put you ears close so to
+            be able to hear inside. You hear nothing but silence.
+        </description>
+        <possibility>
+            <choice nextStep="s156">Down the door.</choice>
+            <choice nextStep="s92">Turn back.</choice>
+        </possibility>
+    </step>
+    <step id="s301" type="multiChoice">
+        <title>Not found out</title>
+        <description>You silently walk past the imp. It doesn't wake up and keep snoring. As you keep going,
+            a door appear on your left. After listening with your ears close, you can hear a creature
+            snoring.
+        </description>
+        <possibility>
+            <choice nextStep="s82">Open the door.</choice>
+            <choice nextStep="s208">Keep going.</choice>
+        </possibility>
+    </step>
+    <step id="s248" type="memory">
+        <theme>default</theme>
+        <title>First encounter</title>
+        <description>While walking around the guardpost, you step on the least lit area, not knowing where you're
+            putting your foot down, you stumble onto the rocks and wake the creature up.
+        </description>
+        <difficulty>4</difficulty>
+        <nextStep value="s301"/>
+    </step>
+    <step id="s156" type="multiChoice">
+        <title>Sturdy door</title>
+        <description>Throw a coin. Which side did you got ?
+        </description>
+        <possibility>
+            <choice nextStep="s343">Tail.</choice>
+            <choice nextStep="s92">Face.</choice>
+        </possibility>
+    </step>
+    <step id="s92" type="multiChoice">
+        <title>Couldn't break the door</title>
+        <description>You didn't manage to break the door. You walk back to the crossroad and head west this time.
+        </description>
+        <possibility>
+            <choice nextStep="s71">Yea..</choice>
+        </possibility>
+    </step>
+    <step id="s102" type="multiChoice">
+        <title>When things go wrong...</title>
+        <description>The door open, and you come inside what looks to be a small torture room. Lots of different tools
+            that look barbaric are on the wall. At the center of the room, two small creature are torturing a dwarf
+            suspended to the ceilling by his wrist. The two monster are cutting him with their swords.
+            The dwarf howl a cry and nothing more is heard after his eyes close. The torturer visibly dissatisfied
+            by the end of their little experiment, sights and turn themselves toward you with anger as if
+            you were the one responsible for the dwarf fainting.
+        </description>
+        <possibility>
+            <choice nextStep="s303">Close the door as humanly possible and keep walking.</choice>
+            <choice nextStep="s19">Draw your sword and fight the two monsters.</choice>
+            <choice nextStep="s68">You rush to the dwarf and pierce him while yelling some obscenity.</choice>
+        </possibility>
+    </step>
+    <step id="s208" type="multiChoice">
+        <title>Another door</title>
+        <description>A little further you find another door on the west wall. You place your ears close but you
+            can't hear anything.
+        </description>
+        <possibility>
+            <choice nextStep="s397">Try to open the door.</choice>
+            <choice nextStep="s363">Keep Walking.</choice>
+        </possibility>
+    </step>
+    <step id="s343" type="multiChoice">
+        <title>Door destroyed</title>
+        <description>You break through the door and fall face first. You know something is wrong when instead of hitting
+            the ground, you keep falling. You finally hit the ground two meter below. Stunned, it takes you several
+            seconds before you come to. Standing inside an empty pit with some bruises, you climb back from where you
+            came from.
+        </description>
+        <possibility>
+            <choice nextStep="s92">After passing the door you keep walking the same way as before.</choice>
+        </possibility>
+    </step>
+    <step id="s303" type="multiChoice">
+        <title>...Turn back as if nothing happened</title>
+        <description>You reach the end of the path and stand before an iron portcullis. You won't be able to force it.
+            Two lever are sticking out from the wall on your right.
+        </description>
+        <possibility>
+            <choice nextStep="s243">Pull the left lever</choice>
+            <choice nextStep="s128">Pull the right lever</choice>
+        </possibility>
+    </step>
+    <step id="s19" type="memory">
+        <theme>default</theme>
+        <title>...Fight</title>
+        <description>You fight against both creature.
+        </description>
+        <difficulty>6</difficulty>
+        <nextStep value="s317"/>
+    </step>
+    <step id="s82" type="multiChoice">
+        <title>Small room</title>
+        <description>The door open and you step inside a small room which smell awfully bad. At the center, a small table
+            with a candle, and belo it, a small wooden box. On the right side, far end corner of the room, an ugly
+            green creature sleep.
+        </description>
+        <possibility>
+            <choice nextStep="s208">Go back outside and keep walking.</choice>
+            <choice nextStep="s147">Crawl inside and try to take the box</choice>
+        </possibility>
+    </step>
+    <step id="s68" type="multiChoice">
+        <title>...just pretend they are right</title>
+        <description>Both monster exchange a stunned look and turn toward you. They talk, and sign for you to wait
+            while they leave to fetch another dwarf. They leave the room. The dwarf on the room is dead as expected.
+            You quickly leave the room and keep heading the same way.
+        </description>
+        <possibility>
+            <choice nextStep="s303">Head the same way.</choice>
+        </possibility>
+    </step>
+    <step id="s397" type="multiChoice">
+        <title>Empty small room</title>
+        <description>The door open. The room on the other side, has a rotten smell to it, and the walls are covered in
+            moist. At the center of it, a small table with a candle on it and a wooden box below. On the far end,
+            there is a bed made of hay, but no one occupying it.
+        </description>
+        <possibility>
+            <choice nextStep="s240">Head to the center and open the box.</choice>
+            <choice nextStep="s363">Leave and keep walking.</choice>
+        </possibility>
+    </step>
+    <step id="s363" type="multiChoice">
+        <title>Bad singer make for great amusement</title>
+        <description>A little further, on the west hand wall, you fin another door just like the previous one
+            You try to come close hear anything, but before you can do so, you can hear from the inside
+            two voices singing loud and worst as you ever heard. How can one manage to sing so bad ?
+        </description>
+        <possibility>
+            <choice nextStep="s370">Step inside to find out.</choice>
+            <choice nextStep="s42">Keep walking and try to forget what yo just heard</choice>
+        </possibility>
+    </step>
+    <step id="s243" type="multiChoice">
+        <title>Ouch</title>
+        <description>What seemed to be a lever is in fact a dagger. You cut yourself on the edge of it, and before long,
+            realize there is poison coated on it. You fall to the ground and start agonizing;
+        </description>
+        <possibility>
+            <choice nextStep="s243badEnd"></choice>
+        </possibility>
+    </step>
+    <step id="s243badEnd" type="end">
+        <description>You died</description>
+        <win value="false"/>
+    </step>
+    <step id="s128" type="multiChoice">
+        <title>Open the gate !</title>
+        <description>A loud vibration is heard and the portcullis start to rise slowly. You walk past it and can now
+            head West or East.
+        </description>
+        <possibility>
+            <choice nextStep="s210">Head West.</choice>
+            <choice nextStep="s58">Head East.</choice>
+        </possibility>
+    </step>
+    <step id="s317" type="multiChoice">
+        <title>Victorious</title>
+        <description>You defeat both creature. You then proceed to cut the rope from which the dwarf is suspended.
+            As dead as he can be. You leave him there and head back the same way you came.
+        </description>
+        <possibility>
+            <choice nextStep="s303"></choice>
+        </possibility>
+    </step>
+    <step id="s147" type="multiChoice">
+        <title>Gold coin</title>
+        <description>You managed to steal the wooden box. You leave the room and once outside in the corridor,
+            you open the box. Inside, you find a gold coin and a mouse that seems to be the pet of the creature you
+            just stole the box from. You keep the coin and release the mouse.
+        </description>
+        <possibility>
+            <choice nextStep="s208">You keep walking</choice>
+        </possibility>
+    </step>
+    <step id="s240" type="memory">
+        <theme>fruit</theme>
+        <title>...Fight</title>
+        <description>The box is light, but somehing doing noise on the inside. You open it and a small snake spring out
+            from it. He bite you on the wrist. No choice but to fight it.
+        </description>
+        <difficulty>3</difficulty>
+        <nextStep value="s145"/>
+    </step>
+    <step id="s370" type="multiChoice">
+        <title>Having fun ?</title>
+        <description>The door open on a small room. Inside, two small creature wearing leather armor. They rise from
+            their seat, but their unsteady footing makes it clear they are drunk.
+        </description>
+        <possibility>
+            <choice nextStep="s116">Take out your sword and jump at them.</choice>
+            <choice nextStep="s42">Close the door and keep walking.</choice>
+        </possibility>
+    </step>
+    <step id="s42" type="multiChoice">
+        <title>Another path to chose</title>
+        <description>You reach the end of the road. You can either head West or East. What will it be ?
+        </description>
+        <possibility>
+            <choice nextStep="s257">Head West</choice>
+            <choice nextStep="s113">Head East</choice>
+        </possibility>
+    </step>
+    <step id="s210" type="multiChoice">
+        <title>Open the gate !</title>
+        <description>Following the path, you reach yet another bifurcation. This time it's either straight ahead (West),
+            or North.
+        </description>
+        <possibility>
+            <choice nextStep="s225">Head West.</choice>
+            <choice nextStep="s357">Head North.</choice>
+        </possibility>
+    </step>
+    <step id="s58" type="multiChoice">
+        <title>Open the gate !</title>
+        <description>You carefully crawl along the way. Soon, the path makes a sudden turn toward the North. There is on
+            the corner, a sturdy white bench with a sign saying : "Rest here exhausted traveller".
+        </description>
+        <possibility>
+            <choice nextStep="s15">Can't hurt anyway, let's rest.</choice>
+            <choice nextStep="s367">Nah, I'm fine, let's keep going.</choice>
+        </possibility>
+    </step>
+    <step id="s145" type="multiChoice">
+        <title>A key</title>
+        <description>While fighting the snake, you dropped the wooden box on the floor. A bronze key came out of it.
+            It's a perfectly normal bronze key, but it has the number '99' written on it.
+        </description>
+        <possibility>
+            <choice nextStep="s363">Take the key and leave.</choice>
+        </possibility>
+    </step>
+    <step id="s116" type="multiChoice">
+        <title>Fight...</title>
+        <description>After rising from their seats, the two creature blankly stare at you. Not knowing why they are not
+            attacking, you wait. Before long, the monsters slowly fall to the ground. Not knowing what has happened,
+            you carrefully stay where you are. They then start snoring. Being visibly asleep, you carefully examinate
+            your surrounding.
+        </description>
+        <possibility>
+            <choice nextStep="s378">Examinate the room.</choice>
+        </possibility>
+    </step>
+    <step id="s257" type="multiChoice">
+        <title>More-Door</title>
+        <description>The path end with a wooden door. You listen closely, and hear shouts of anger coming from inside.
+            Will you head inside to check it out ?
+        </description>
+        <possibility>
+            <choice nextStep="s168">Go inside.</choice>
+            <choice nextStep="s293">Head back.</choice>
+        </possibility>
+    </step>
+    <step id="s113" type="multiChoice">
+        <title>And again, Another path to chose</title>
+        <description>You come to a stop before your path spreading in two.
+        </description>
+        <possibility>
+            <choice nextStep="s285">Head North.</choice>
+            <choice nextStep="s78">Head East</choice>
+        </possibility>
+    </step>
+    <step id="s225" type="multiChoice">
+        <title>Bifurcation</title>
+        <description>The path continue West and then make a right turn and head North. A little bit further,
+            you arrive at a bifurcation where a small corridor lead to the West.
+        </description>
+        <possibility>
+            <choice nextStep="s77">Head West in the small corridor.</choice>
+            <choice nextStep="s63">Keep going North.</choice>
+        </possibility>
+    </step>
+    <step id="s357" type="multiChoice">
+        <title>Cavern</title>
+        <description>The path lead to the North. Soon enought, It spreads out from both side to form an immense cavern
+            made of rocks. There doesn't seems to be any exit beside the path you just came from. Should you head back ?
+        </description>
+        <possibility>
+            <choice nextStep="s269">Head back to the previous crossroad.</choice>
+            <choice nextStep="s57">Enter the cavern</choice>
+        </possibility>
+    </step>
+    <step id="s15" type="multiChoice">
+        <title>A little rest is always a good thing</title>
+        <description>You rest for a moment and can already feel better. Once you're done eating and drinking, you resume
+            your aventure.
+        </description>
+        <possibility>
+            <choice nextStep="s367">Time to leave</choice>
+        </possibility>
+    </step>
+    <step id="s367" type="multiChoice">
+        <title>Bifurcation</title>
+        <description>Two path appear before you. Which one will you chose ?
+        </description>
+        <possibility>
+            <choice nextStep="s235">Head West</choice>
+            <choice nextStep="s8">Head East</choice>
+        </possibility>
+    </step>
+    <step id="s378" type="multiChoice">
+        <title>Farrigo Di Maggio</title>
+        <description>While examining the room, you find a small box. While examining it more closely it doesn't appear to be
+            locked, yet, you can't seem to open it. A small copper plate spell 'Farrigio Di Maggio'. Has you finish
+            reading the plate, a small noise can be heard from it. Should you listen to it ?
+        </description>
+        <possibility>
+            <choice nextStep="s378a">Listen to it.</choice>
+            <choice nextStep="s42">Drop the box and leave.</choice>
+        </possibility>
+    </step>
+    <step id="s378a" type="riddle">
+        <title>Magic Box</title>
+        <description>If you have me, you want to share me. If you share me, you haven’t got me. What am i?</description>
+        <hint>Everyone has some</hint>
+        <possibility>
+            <choice nextStep="s296">Secret</choice>
+            <choice nextStep="s296">A secret</choice>
+        </possibility>
+    </step>
+    <step id="s168" type="multiChoice">
+        <title>Imp master</title>
+        <description>The door open on a big room. A chair made of quality wood, and a massive table makes it clear that
+            someone or something important is occupying this room. At the center of the room, you see a chest.
+            On the far end side, An imp two times bigger than the average is holding a whip and lashing a smaller one.
+        </description>
+        <possibility>
+            <choice nextStep="s372">Fight both of them.</choice>
+            <choice nextStep="s65">Fight the chief and hope the small one will help you.</choice>
+            <choice nextStep="s293">Leave the room and head back to the junction</choice>
+        </possibility>
+    </step>
+    <step id="s293" type="multiChoice">
+        <title>Junction</title>
+        <description>You're back at the junction and head East this time.
+        </description>
+        <possibility>
+            <choice nextStep="s113">Go East.</choice>
+        </possibility>
+    </step>
+    <step id="s285" type="multiChoice">
+        <title>Pleading</title>
+        <description>On the right side of the path (East), there is a door. You can hear on the other side of it
+            a man calling for help. Will you help him ?
+        </description>
+        <possibility>
+            <choice nextStep="s36">Open the door to help him.</choice>
+            <choice nextStep="s300">Keep going</choice>
+        </possibility>
+    </step>
+    <step id="s78" type="multiChoice">
+        <title>That's a big door</title>
+        <description>The path ends before a massive door made of wood and hinge made of metal. You can hear someone
+            mumbling inintelligble words, and pots bonking each other. There is no doubt that there are several people
+            in there. This is most probably the eating room for all the creatur
+        </description>
+        <possibility>
+            <choice nextStep="s159">Head inside.</choice>
+            <choice nextStep="s237">Head back.</choice>
+        </possibility>
+    </step>
+    <step id="s77" type="multiChoice">
+        <title>Getting hungry ?</title>
+        <description>After walking several meter in the passageway, you stop before a crossing. As always, you can either
+            head West or head East.
+        </description>
+        <possibility>
+            <choice nextStep="s18">Head West.</choice>
+            <choice nextStep="s311">Head East</choice>
+        </possibility>
+    </step>
+    <step id="s63" type="multiChoice">
+        <title>Is it getting narrow, or is it just me ?</title>
+        <description>You walk along the path and the further you are walking, the more it's getting narrow. After
+            some times, the ceilling is also getting lower until you have to crouch to be able to keep going.
+            At the same time you are thinking that, a laught echo all around you.
+        </description>
+        <possibility>
+            <choice nextStep="s281">Keep going.</choice>
+            <choice nextStep="s10">Head Back.</choice>
+        </possibility>
+    </step>
+    <step id="s269" type="multiChoice">
+        <title>Back</title>
+        <description>You are back to previous junction.
+        </description>
+        <possibility>
+            <choice nextStep="s225">Head west.</choice>
+        </possibility>
+    </step>
+    <step id="s57" type="multiChoice">
+        <title>Inside the cavern</title>
+        <description>At the same moment you walk inside the cavern, you hear loud footstep behind you. You crouch in
+            a dark corner near the entrance. The footsteps are getting louder and louder. and an Ogre measuring no less
+            than two meter come in view, he's holding a mass on his right hand. It has not yet found you out
+            but he is getting close. He seems to have some trouble walking in the path leading to the cavern.
+            He should have some trouble swinging his mass there. What will you do ?
+        </description>
+        <possibility>
+            <choice nextStep="s57a">Fight him before he gets inside.</choice>
+            <choice nextStep="s269">Throw a rock on the far side of the cavern to distract him while you slip by.</choice>
+        </possibility>
+    </step>
+    <step id="s57a" type="multiChoice">
+        <title>Fighting</title>
+        <description>YOu confront the ogre while he is at a disadventage. He has trouble moving forward, and swinging his
+            mass in this closed space is impossible. You carefully face him. The orgre reach for his mass and pull it
+            the best he can in this narrow corridor. In the meantime, you strike it's right tight. A loud groan makes
+            it clear that it must have hurt. Not knowing how to defend himself the Ogre flay his legs toward you.
+            'Wait what ??!!' taken completly by surprise you are hit by a massive leg coming in your direction.
+            Stunned, the ogre proceed to rush toward you and seize you in on of it's hand. Before you know it. You have
+            been squashed against the wall.
+        </description>
+        <possibility>
+            <choice nextStep="s57badEnd">....</choice>
+        </possibility>
+    </step>
+    <step id="s57badEnd" type="end">
+        <description>You died</description>
+        <win value="false"/>
+    </step>
+    <step id="s235" type="multiChoice">
+        <title>Bifurcation</title>
+        <description>Two path appear before you. Which one will you chose ?
+        </description>
+        <possibility>
+            <choice nextStep="s176">Head West</choice>
+            <choice nextStep="s218">Head North</choice>
+        </possibility>
+    </step>
+    <step id="s8" type="memory">
+        <theme>prof</theme>
+        <title>Barbarian</title>
+        <description>The path ends with a sturdy door. You try to listen, but no sound are made on the other side.
+            You turn the handle and step inside. As you are looking around, a war cry  resound behind you. You
+            instantly turn and face the barbarian rushing toward you.
+        </description>
+        <difficulty>5</difficulty>
+        <nextStep value="s273"/>
+    </step>
+    <step id="s296" type="multiChoice">
+        <title>Success</title>
+        <description>You managed to find the solution. The box open, and inside, you find a small codex titled
+            'How does the dragon make and blows fire'. The book is without a doubt very precious. The author,
+            'Farrigo Di Maggio' expose one of the most important work of his life. It explains accurately how dragon
+            are able to breathe fire and teach you a spell to neutralize this ability. You memorize the formula,
+            and before you know it, the codex pages fade to white...
+        </description>
+        <possibility>
+            <choice nextStep="s42">Head back outside</choice>
+        </possibility>
+    </step>
+    <step id="s372" type="multiChoice">
+        <title>Fight</title>
+        <description>You engage the fight engage the two of them. On which one should you focus your attention first ?
+        </description>
+        <possibility>
+            <choice nextStep="s372a">The Imp Master</choice>
+            <choice nextStep="s372badEnd">The small Imp</choice>
+        </possibility>
+    </step>
+    <step id="s372a" type="multiChoice">
+        <title>Fight</title>
+        <description>You fight the Imp master first. It still only has a whip in his hand and you kill him before he has
+            time to reach for the sword on his side. By the time you are done with him, the small one wounded only had
+            time to square himself off. Already weakened, he is not a threat to you. You make short work of him
+            and ends him easily.
+        </description>
+        <possibility>
+            <choice nextStep="s21">Proceed</choice>
+        </possibility>
+    </step>
+    <step id="s65" type="multiChoice">
+        <title>Fight</title>
+        <description>You focus your attention on the Imp master while hoping that the small one will help you by
+            taking his revenge against his persecutor. As you rush for the Master, unexpectedly, the small one
+            jump in the melee and side with his master.
+        </description>
+        <possibility>
+            <choice nextStep="s372">Fight both of them.</choice>
+        </possibility>
+    </step>
+    <step id="s36" type="multiChoice">
+        <title>Pleading</title>
+        <description>You open the door and find an old man sprawnled on the ground. He is not on a good shape, and he is
+            wounded. He see you at the entrance and ask for help. He says he knows valuable information that could help
+            you.
+        </description>
+        <possibility>
+            <choice nextStep="s36a">Reach to help him.</choice>
+            <choice nextStep="s300">He's done for, leave him there and keep going.</choice>
+        </possibility>
+    </step>
+    <step id="s36a" type="multiChoice">
+        <title>Helping</title>
+        <description>You reach to help the old man but as you crouch to help him stand up, he pulls a knife from his
+            sleeves and attacks you while yelling like a mad man. He cuts you on your left flank.
+            You rise and distance yourself from him. What will you do ?
+        </description>
+        <possibility>
+            <choice nextStep="s300">Leave him there</choice>
+            <choice nextStep="s36b">Crouch down again and try to help him again</choice>
+            <choice nextStep="s263">Yell the loudest you can and tell him to silence himself</choice>
+        </possibility>
+    </step>
+    <step id="s36b" type="multiChoice">
+        <title>Helping</title>
+        <description>You reach down again to help the old man, this times he aim for the neck. You bleed out.
+        </description>
+        <possibility>
+            <choice nextStep="s36abadEnd">...</choice>
+        </possibility>
+    </step>
+    <step id="s36abadEnd" type="end">
+        <description>You died</description>
+        <win value="false"/>
+    </step>
+    <step id="s300" type="multiChoice">
+        <title>A door</title>
+        <description>A little bit further, on the West side of the path, you find a door. On the other side of it, you can
+            hear scream coming from someone probably being tortured. Should you open the door ?
+        </description>
+        <possibility>
+            <choice nextStep="s102">Open the door.</choice>
+            <choice nextStep="s303">Keep going</choice>
+        </possibility>
+    </step>
+    <step id="s159" type="multiChoice">
+        <title>Eating room</title>
+        <description>You head inside the eating room. You push the door and it resound loudly. Once the door open,
+            you gaze inside the room and everyone's eyes are headed your way. You only have time to pull out your sword
+            before dozens of Imp are fighting you. You bravely defeat ten of them but still fall to the unending influx
+            of monsters.
+        </description>
+        <possibility>
+            <choice nextStep="s159badEnd">Head inside.</choice>
+        </possibility>
+    </step>
+    <step id="s159badEnd" type="end">
+        <description>You died</description>
+        <win value="false"/>
+    </step>
+    <step id="s237" type="multiChoice">
+        <title>Walking</title>
+        <description>You walk back  along the path and head to the previous bifurcation. This time, you head North.
+        </description>
+        <possibility>
+            <choice nextStep="s285">North It is.</choice>
+        </possibility>
+    </step>
+    <step id="s18" type="multiChoice">
+        <title>Crumbling ground</title>
+        <description>You walk toward the West along the path. After 50 meters or so, you feel the ground slighly rumbling
+            in front of you. Some of the path is clearly crumbling and the rest is still in place by some kind
+            of luck.
+        </description>
+        <possibility>
+            <choice nextStep="s261">Head Back to the previous crossroad</choice>
+            <choice nextStep="s18a">I've been losing wait recently. I should be able to cross...</choice>
+        </possibility>
+    </step>
+    <step id="s18a" type="multiChoice">
+        <title>Not so ligh after all</title>
+        <description>You confidently walk forward. The The first step you take, the ground crumble below your feet,
+            and you end up falling in a stake hole.
+        </description>
+        <possibility>
+            <choice nextStep="s18abadEnd">....</choice>
+        </possibility>
+    </step>
+    <step id="s18abadEnd" type="end">
+        <description>You died</description>
+        <win value="false"/>
+    </step>
+    <step id="s311" type="multiChoice">
+        <title>Water is echoing</title>
+        <description>You walk along the path. The more you progress forward, the more the sound of a river is making itself
+            heard. Soon enought, you stand before a large river.
+        </description>
+        <possibility>
+            <choice nextStep="s244">Head West.</choice>
+        </possibility>
+    </step>
+    <step id="s244" type="multiChoice">
+        <title>A river</title>
+        <description>You stand before the river. The current is strong enought to pull you with him
+            and you can't see what's downriver.
+        </description>
+        <possibility>
+            <choice nextStep="s143">Rest here while thinking of a solution.</choice>
+            <choice nextStep="s399">Jump in the river and head downstream.</choice>
+        </possibility>
+    </step>
+    <step id="s281" type="multiChoice">
+        <title>It's too narrow</title>
+        <description>The path becomes so narrow that you can't progresss any further. You turn tail and head back to the
+            crossroads.
+        </description>
+        <possibility>
+            <choice nextStep="s10">Head Back.</choice>
+        </possibility>
+    </step>
+    <step id="s10" type="multiChoice">
+        <title>Junction</title>
+        <description>You are back to the crossroad and head North.
+        </description>
+        <possibility>
+            <choice nextStep="s77">North, got it.</choice>
+        </possibility>
+    </step>
+    <step id="s176" type="multiChoice">
+        <title>Cavern</title>
+        <description>At some point, you reach a cavern entrance. The cavern is 30 meter wide, and there is no apparent
+            exit on the other side.
+        </description>
+        <possibility>
+            <choice nextStep="s270">Head inside</choice>
+            <choice nextStep="s375">Go back to the junction</choice>
+        </possibility>
+    </step>
+    <step id="s270" type="multiChoice">
+        <title>Exploring the Cavern</title>
+        <description>You explore the cavern and find dozens of stalactite and stalagmite of beautiful color surrounding
+            the place. At the end of the cavern, you find a pair of boot recently made.
+        </description>
+        <possibility>
+            <choice nextStep="s61">Keep exploring.</choice>
+            <choice nextStep="s375">Head back.</choice>
+        </possibility>
+    </step>
+    <step id="s61" type="multiChoice">
+        <title>A noble... spider ?</title>
+        <description>While exploring the cavern, you suddently hear behind you a set of hasty footsteps. Before you have
+            time to pull out your sword, the giant spider salutes you with one of it's forelegs. Unepexctedly, it can
+            talk. and pronounce the following words in a dignified tone not unlike a noble :
+            "It's been so long since I had someone visiting. Dear sir, would you kindly wagger over a riddle with me ?
+            Should you win, I will tell you somethings that might come in handy for your adventure" What will
+            you answer ?
+        </description>
+        <possibility>
+            <choice nextStep="s61a">"Sure let's play"</choice>
+            <choice nextStep="s61c">Say nothing and flee as fast as you can</choice>
+        </possibility>
+    </step>
+    <step id="s61a" type="riddle">
+        <title>Let's play !</title>
+        <description><![CDATA[
+            <p>Here is the riddle :</p>
+            <p>“To all things and men I appertain,</p>
+            <p>and yet by some am shunned and distained.</p>
+            <p>Fondle me and ogle me til you’re insane,</p>
+            <p>but no blow can harm me, cause me pain.</p>
+            <p>Children delight in me, elders take fright.
+            <p>Fair maids rejoice and spin.</p>
+            <p>Cry and I weep, yawn and I sleep.</p>
+            <p>Smile, and I too shall grin.</p>
+            <p>What am I?”</p>
+        ]]>
+        </description>
+        <hint>Everyone has one but you can't always see it</hint>
+        <possibility>
+            <choice nextStep="s61a1">Reflection</choice>
+            <choice nextStep="s61a1">The reflection</choice>
+        </possibility>
+    </step>
+    <step id="s61a1" type="multiChoice">
+        <title>Success</title>
+        <description>Delighted you found the answer the spider talks "It is indeed a reflection ! My quite a smart
+            adventurer you are. A wagger's a wagger. Here is what I promised you. If you wish to reach the top of the
+            mountain, you need but to listend for the flow of water. Follow the sound and once you reach the river,
+            ring the bell. Make sure you pay the men so you can cross safely". The spider then salute's you once again
+            and go back to the darkness. Did it seemed disapointed that you won ? You head back and follow the spider advice to listen dor the sound of water.
+        </description>
+        <possibility>
+            <choice nextStep="s218">Head back and follow the advice</choice>
+        </possibility>
+    </step>
+    <step id="s61c" type="multiChoice">
+        <title>Fleeing</title>
+        <description>Before you know it, the spider is standing before you and you are bleeding out. Loosing consciousness, you hear the last
+            word of the spider. "That's too bad. Let's hope the next one will be better"
+        </description>
+        <possibility>
+            <choice nextStep="s61cbadEnd">...</choice>
+        </possibility>
+    </step>
+    <step id="s61cbadEnd" type="end">
+        <description>You died</description>
+        <win value="false"/>
+    </step>
+    <step id="s218" type="multiChoice">
+        <title>The river</title>
+        <description>You reach the shore and before you, flow a river. The current is strong, and the dwonstream is engulfed
+            in darkness. There seem to be four way of crossing the river. On your left a rusty bell, in front, a small
+            boat is attached, on the right, an old bridge not spared by the time, and you can still try to swim accross.
+            Which one will you choose ?
+        </description>
+        <possibility>
+            <choice nextStep="s3">Ring the bell</choice>
+            <choice nextStep="s386">Use the boat</choice>
+            <choice nextStep="s209">Try to cross the bridge</choice>
+            <choice nextStep="s316">Swim</choice>
+        </possibility>
+    </step>
+    <step id="s273" type="multiChoice">
+        <title>Victory</title>
+        <description>You defeated the barbarian. You keep walking and come before an open door. Passing through, before
+            long you hear the song of water flowing.
+        </description>
+        <possibility>
+            <choice nextStep="s218">Let's keep going</choice>
+        </possibility>
+    </step>
+    <step id="s372badEnd" type="multiChoice">
+        <title>Bad choice</title>
+        <description>You fight the small Imp first. You dispatch him easily, but by the time you are done, the Imp master
+            has already dropped the whip and pulled out a sword. You try to fight the master, but stumble on the body
+            of the imp recently defeated. The Imp master doesn't let this opportunity go to waste.
+        </description>
+        <possibility>
+            <choice nextStep="s372badEnda">...</choice>
+        </possibility>
+    </step>
+    <step id="s372badEnda" type="end">
+        <description>You died</description>
+        <win value="false"/>
+    </step>
+    <step id="s21" type="multiChoice">
+        <title>Victory</title>
+        <description>You defeated both the monster. You now turn your attention to the chest. It's locked, but you could
+            try to force it open with your sword.
+        </description>
+        <possibility>
+            <choice nextStep="s339">Force the chest open</choice>
+            <choice nextStep="s293">Leave it there and head back</choice>
+        </possibility>
+    </step>
+    <step id="s339" type="multiChoice">
+        <title>Chest open</title>
+        <description>You managed to open the chest. Inside you find 25 gold coins, a bottle of unknown liquid, and a glove
+        </description>
+        <possibility>
+            <choice nextStep="s293">Take the items and leave</choice>
+        </possibility>
+    </step>
+    <step id="s263" type="multiChoice">
+        <title>Yelling</title>
+        <description>You yell the loudest you can to silence him. Stunned, he look at you and calms himself. After some
+            time has passed and he is calm enought, you decide to talk with him. You ask him if he would like to
+            follow you, but he politely decline. You learn that he has been emprisoned here after going on a
+            quest just like you. Before you both part way, he tells you to be respectfull to the boatmen and
+            that you should pull the right lever when you reach the portcullis. You both part way. You leave the room
+            and head the same direction.
+        </description>
+        <possibility>
+            <choice nextStep="s300">Keep going</choice>
+        </possibility>
+    </step>
+    <step id="s261" type="multiChoice">
+        <title>Turning back</title>
+        <description>You turn back and head to the previous junction, heading East this time.
+        </description>
+        <possibility>
+            <choice nextStep="s345">East</choice>
+        </possibility>
+    </step>
+    <step id="s345" type="multiChoice">
+        <title>Crumbled path</title>
+        <description>As you wal you reach what seems to be a junction. But the path forward is crumbled. You have no
+            choice but to head East.
+        </description>
+        <possibility>
+            <choice nextStep="s311">East</choice>
+        </possibility>
+    </step>
+    <step id="s143" type="multiChoice">
+        <title>Resting</title>
+        <description>You lay down to rest for a moment. While thinking of something, the ground below you start
+            shaking. You jump to the side to avoid the worm coming out of the ground and prepare to fight him.
+        </description>
+        <possibility>
+            <choice nextStep="s143a">Fight</choice>
+        </possibility>
+    </step>
+    <step id="s143a" type="memory">
+        <theme>prof</theme>
+        <title>Worm fight</title>
+        <description>You put your guard up and face the worm.
+        </description>
+        <difficulty>6</difficulty>
+        <nextStep value="s143b"/>
+    </step>
+    <step id="s143b" type="multiChoice">
+        <title>Tough fight</title>
+        <description>The fight prooved to be harder than you imagined. You manage to inflict serious wound on the worm
+            but had no choice than to jump on the water.
+        </description>
+        <possibility>
+            <choice nextStep="s399">Fight</choice>
+        </possibility>
+    </step>
+    <step id="s399" type="multiChoice">
+        <title>Swiming</title>
+        <description>The current is strong and it's pulling you downstream. You are taken through an opening on the cavern
+            walls, and arrive in another cavern. The current then push you on the South shore.
+        </description>
+        <possibility>
+            <choice nextStep="s218">Stand up</choice>
+        </possibility>
+    </step>
+    <step id="s3" type="multiChoice">
+        <title>The bell is ringing</title>
+        <description>The bell is faintly ringing and a men appear on the opposite shore. He climbs in a small boat just
+            like the one on your side and cross slowly but steadily the river. After some time, he reach your your side
+            and tie his boat to your side of the shore. He talks to you and require 3 Gold coin to make you cross
+            to the other side.
+        </description>
+        <possibility>
+            <choice nextStep="s272">Pay him his due</choice>
+            <choice nextStep="s127">Threaten him to let you pass for free</choice>
+        </possibility>
+    </step>
+    <step id="s272" type="multiChoice">
+        <title>Crossing the river</title>
+        <description>You pay the old man his price. You get on the old man boat and cross the river with him. After some
+            time, you reach the other side of the river and you part way with him.
+        </description>
+        <possibility>
+            <choice nextStep="s272a">Continue</choice>
+        </possibility>
+    </step>
+    <step id="s272a" type="multiChoice">
+        <title>Crossing the river</title>
+        <description>Congratulation, You managed to cross the river and are getting closer to the top of the mountain.
+            That's it for this story. Thank you for playing.
+        </description>
+        <possibility>
+            <choice nextStep="s272agoodEnd">Continue</choice>
+        </possibility>
+    </step>
+    <step id="s272agoodEnd" type="end">
+        <description>You won</description>
+        <win value="true"/>
+    </step>
+    <step id="s127" type="multiChoice">
+        <title>Old mand fight</title>
+        <description>The old mand doesn't bulge an inch while you threaten him. After some time, his skin starts to turn
+            Dark and hair starts to grow from all over his body. He also seems to now be taller than you and sturdily
+            built. Before you can do anything, the old man simply pushes you on the water.
+        </description>
+        <possibility>
+            <choice nextStep="s316">Try to swim</choice>
+        </possibility>
+    </step>
+    <step id="s386" type="multiChoice">
+        <title>The boat</title>
+        <description>You step on the boat and start rowing to reach the other side. Halfway through, the boat start to
+            move on it's own and capsize. You try to swim to the other side, but can't make it.
+        </description>
+        <possibility>
+            <choice nextStep="s316">Swim</choice>
+        </possibility>
+    </step>
+    <step id="s209" type="multiChoice">
+        <title>Crossing the bridge</title>
+        <description>You go to the bridge and try to avoid thinking of how old it is. By the time you reach halfway, the
+            bridge rumble and you heard some plank falling on the water behind you.
+        </description>
+        <possibility>
+            <choice nextStep="s209a">Start running to the other side</choice>
+            <choice nextStep="s209b">Keep walking</choice>
+        </possibility>
+    </step>
+    <step id="s209a" type="multiChoice">
+        <title>Crossing the bridge</title>
+        <description>You run the fatest you can to reach to the other side of the bridge. Unfortunatly, it crumbles under
+            your feet and you ends up in the water.
+        </description>
+        <possibility>
+            <choice nextStep="s316">Swim</choice>
+        </possibility>
+    </step>
+    <step id="s209b" type="multiChoice">
+        <title>Crossing the bridge</title>
+        <description>You calmy walk to the ohter side while not paying attention to the bridge that is entirely crumbling
+            behind you. By some kind of miracle, you managed to reach the other side.
+        </description>
+        <possibility>
+            <choice nextStep="s272a">Continue</choice>
+        </possibility>
+    </step>
+    <step id="s316" type="multiChoice">
+        <title>Swimming against the current</title>
+        <description>You try your hardest to swim to the other side of the shore, but the current is just too strong.
+            The water slowly drags you to the dark opening where you can hear a waterfall. Soon, you are completly
+            exhausted, and end up falling of the waterfall.
+        </description>
+        <possibility>
+            <choice nextStep="s316badEnd">...</choice>
+        </possibility>
+    </step>
+    <step id="s316badEnd" type="end">
+        <description>You died</description>
+        <win value="false"/>
+    </step>
+    <step id="s375" type="multiChoice">
+        <title>Junction</title>
+        <description>You head back to the junction and head North
+        </description>
+        <possibility>
+            <choice nextStep="s218">Continue.</choice>
+        </possibility>
+    </step>
+</story>

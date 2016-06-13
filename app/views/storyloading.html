@@ -1,0 +1,28 @@
+<div class="col-md-12 load">
+    <div ng-if="!story.isValid && story.isLoaded" ng-include="'views/warning.html'"></div>
+
+    <div ng-if="!story.isLoaded || !story.isValid">
+        <h1>Load a story</h1>
+
+        <div ng-init="getStoryList()">
+            <h3>Load a story from the server</h3>
+            <p ng-repeat="storyName in storyList">
+                <span class="glyphicon glyphicon-book"></span> <a
+                    ng-click="story.loadFromServer(storyName);">{{storyName}}</a>
+            </p>
+        </div>
+
+        <div class="form-group">
+            <h3>Upload a story</h3>
+            <form name="formFileUpload" ng-submit="fileUpload.loaded && loadFile();">
+                <div class="form-group">
+                    <input type="file" data-readfile="fileUpload" required/>
+                    <br>
+                    <input class="btn btn-default" type="submit" value="Charger le fichier" ng-disabled="!fileUpload.loaded"/>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>

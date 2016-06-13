@@ -1,0 +1,14 @@
+<div class="graph-box">
+    <div class="box">
+        <label for="storygraph-options-showlabels">
+            <input type="checkbox" id="storygraph-options-showlabels" ng-model="options.showEdgesLabel"/>
+            Display transition text
+        </label>
+        <label>
+            <input type="checkbox" ng-model="options.showIds"/>
+            Always use IDs
+        </label>
+    </div>
+    <!-- This div is replaced by the graph canvas-->
+    <div id="storygraph-graph" style="flex-grow: 1; border: #000000 solid 4px;"></div>
+</div>

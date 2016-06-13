@@ -1,0 +1,16 @@
+<div class="col-md-12">
+    <div ng-repeat="(text, id) in step.next">
+        <p>To '{{id}}' with answer '{{text}}' <button ng-click="stepEdit.removeNext(step, text);" class="btn btn-danger glyphicon glyphicon-remove">Remove</button></p><br/>
+    </div>
+    <form role="form" class="form-inline" ng-submit="stepEdit.addOption(step, selected, transitionText)" ng-init="selected = 'BEGIN'">
+        <label>
+            Create new transition to
+            <select class="form-control" ng-options="stepsIds as stepsIds for (stepsIds, value) in story.steps" ng-model="selected" required></select>
+        </label>
+        <label>
+            with answer
+            <input class="form-control" type="text" ng-model="transitionText" required/>
+        </label>
+        <input class="btn btn-default" type="submit" value="Create new transition"/>
+    </form>
+</div>

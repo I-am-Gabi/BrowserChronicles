@@ -1,0 +1,8 @@
+<form class="col-md-5" role="group" ng-repeat="(opt, id) in currentStepHandler.opts">
+    <div class="radio">
+        <label>
+            <input type="radio" value="{{id}}" ng-model="currentStepHandler.next" required />
+            <p class="multi-options">{{opt}}</p>
+        </label>
+    </div>
+</form>

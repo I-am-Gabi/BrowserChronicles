@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<story xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="story.xsd" title="Histoire sans fin">
+    <init>Story n°=0</init>
+    <step id="BEGIN" type="multiChoice">
+        <title>Which into the mountain</title>
+        <description>After an exhausting encounter with a bugbear, four travelling heroes are grateful
+            to find a small town nestled in the unfamiliar hills. Their relief quickly turns
+            to suspicion, however, when they find the town of Angurkslariun uninhabited—at least by
+            the living.
+        </description>
+        <possibility>
+            <choice nextStep="s1">Go to the city.</choice>
+            <choice nextStep="s6">Run, Barry, Run.</choice>
+        </possibility>
+    </step>
+    <step id="s1" type="riddle">
+        <title>Who am I?</title>
+        <description>I will be yesterday, I was tomorrow.</description>
+        <hint>Look at the calendar.</hint>
+        <possibility>
+            <choice nextStep="s2">Today</choice>
+            <choice nextStep="s3">I don't know</choice>
+        </possibility>
+    </step>
+    <step id="s2" type="memory">
+        <theme>fruit</theme>
+        <difficulty>2</difficulty>
+        <description>Cherche les paires</description>
+        <nextStep value="s3"/>
+    </step>
+    <step id="s3" type="multiChoice">
+        <title>Seeking shelter in Angurkslariun</title>
+        <description><![CDATA[
+            <b>So you chose to go to the city of Angurkslariun.</b>
+            The town is little more than ten or twelve buildings scattered on either side of the weedy road.
+            You can see a graveyard, then an abandoned camp, then finally a cave. BUT, WAIT!
+            What is that? Wraiths, possessed animals and beasts they begin to emerge from the dark places of cite.
+            Then you progress further into the cave, however, you can see more human enemies... Necromancers come in
+            your direction.
+            <img src="https://d3b4yo2b5lbfy.cloudfront.net/wp-description/uploads/wallpapers/GW2_HumanNecromancer-1280x720.jpg" height="400"/>
+        ]]></description>
+        <possibility>
+            <choice nextStep="BEGIN">Go to the graveyard</choice>
+        </possibility>
+    </step>
+    <step id="s4" type="end">
+        <description>Tu as perdu</description>
+        <win value="false"/>
+    </step>
+    <step id="s5" type="end">
+        <description>Tu as gagné</description>
+        <win value="true"/>
+    </step>
+    <step id="s6" type="end">
+        <description>Tu as gagné</description>
+        <win value="true"/>
+    </step>
+</story>

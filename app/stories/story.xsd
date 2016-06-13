@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="storyType">
+        <xs:sequence>
+            <xs:element name="init" type="xs:string"/>
+            <xs:element name="step" type="stepType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="title" use="required" type="xs:string"/>
+    </xs:complexType>
+    <xs:element name="story" type="storyType"/>
+
+    <xs:complexType name="stepType">
+        <xs:all>
+            <xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="possibility" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="choice" type="choiceType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="nextStep" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="value"  type="xs:IDREF"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="row" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="column" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="hint" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="difficulty" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="theme" type="themeList" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="row" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="column" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="win" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attribute name="value" use="required" type="xs:boolean"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+        <xs:attribute name="id" use="required" type="xs:ID"/>
+        <xs:attribute name="type" use="required" type="typeStepEnum"/>
+    </xs:complexType>
+    <xs:simpleType name="typeStepEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="multiChoice"/>
+            <xs:enumeration value="riddle"/>
+            <xs:enumeration value="end"/>
+            <xs:enumeration value="maze"/>
+            <xs:enumeration value="memory"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="themeList">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="default"/>
+            <xs:enumeration value="fruit"/>
+            <xs:enumeration value="prof"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="choiceType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="nextStep"  type="xs:IDREF"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
+

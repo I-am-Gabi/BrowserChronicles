@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<story
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='story.xsd' title="Poly'Chronicles">
+    <init></init>
+    <step id="BEGIN" type="multiChoice">
+        <title>You open your eyes...</title>
+        <description>
+            You are walking a white, cotton-like, matter. You come to realize it's juste plain normal cloud, as usual.
+            You are free of your movement, at last! What will you do?
+        </description>
+        <possibility>
+            <choice nextStep="dream_fly_high">Fly above those clouds, who need to walk anyway?</choice>
+            <choice nextStep="dream_fly_low">Dive straight under the clouds, stupid view-blocking things.</choice>
+            <choice nextStep="dream_peek">Take a peek under the clouds.</choice>
+        </possibility>
+    </step>
+    <step id="dream_fly_high" type="multiChoice">
+        <title>Fly above the clouds</title>
+        <description>
+            You have no wings, think straigh, for once...
+        </description>
+        <possibility>
+            <choice nextStep="dream_walk_aimlessly">Walk aimlessly, you were sure you had wings...</choice>
+            <choice nextStep="dream_look_for_wings">Look for your wings.</choice>
+        </possibility>
+    </step>
+    <step id="dream_fly_low" type="multiChoice">
+        <title>You descend under the clouds</title>
+        <description>
+            You take a deep breath, then dive headfirst under those clouds.
+            You enjoy the sight, the joyfull sight of the birds, the fresh air on your cheeks, the fast-closing ground...
+            You have no wings! How silly, you are now free-falling tower your death...
+        </description>
+        <possibility>
+            <choice nextStep="dream_flap_arms">Flap your arms as fast as possible</choice>
+            <choice nextStep="dream_enjoy_view">Welp... You just have to enjoy the view now...</choice>
+        </possibility>
+    </step>
+    <step id="dream_peek" type="multiChoice">
+        <title>You take a peek under the clouds</title>
+        <description>
+            You get on your knees, on the border of a cloud, then put your face through a light cloud.
+            Eh, it's pretty high, ain't it?
+            Rich of this intel, you decide to...
+        </description>
+        <possibility>
+            <choice nextStep="dream_fly_low">...dive under those clouds!</choice>
+            <choice nextStep="dream_fly_high">...fly ABOVE the clouds, it's too scary under those.</choice>
+            <choice nextStep="dream_walk_aimlessly">...visit the area.</choice>
+        </possibility>
+    </step>
+    <step id="dream_walk_aimlessly" type="multiChoice">
+        <title>You visit the emptyness</title>
+        <description>
+            It's definitely empty. Like, there's nothing. Except clouds.
+            Suddently, you see an odd-looking cloud: it's black.
+        </description>
+        <possibility>
+            <choice nextStep="dream_black_cloud">Well, that's the only thing around here, let's see it!</choice>
+            <choice nextStep="dream_keep_walking">Avoid it, it can't be good...</choice>
+        </possibility>
+    </step>
+    <step id="dream_look_for_wings" type="multiChoice">
+        <title>You look for your wings</title>
+        <description>
+            Wings? Who said there would be wings?
+            Get back to business, silly.
+        </description>
+        <possibility>
+            <choice nextStep="dream_walk_aimlessly">Walk to clean your head.</choice>
+        </possibility>
+    </step>
+    <step id="dream_black_cloud" type="multiChoice">
+        <title>You walk toward the black cloud</title>
+        <description>
+            This cloud seems apealing, you walk toward it.
+            After some steps, you realize it's making some strange noises.
+            After some minutes, you finally manage to remember: this is a thundercloud!
+            It's ready to fire! Fast, run away!
+        </description>
+        <possibility>
+            <choice nextStep="dream_black_cloud_run">RUN, YOU FOOL!</choice>
+            <choice nextStep="dream_black_cloud_fire">Eh, let's enjoy the show!</choice>
+        </possibility>
+    </step>
+    <step id="dream_black_cloud_run" type="multiChoice">
+        <title>You run away from the black cloud</title>
+        <description>
+            You start running backward as fast as you can.
+            Not seeing were you walk, you end up falling.
+            You now lay on the black cloud... How courrageous!
+        </description>
+        <possibility>
+            <choice nextStep="dream_black_cloud_fire">That's gonna hurt...</choice>
+        </possibility>
+    </step>
+    <step id="dream_black_cloud_fire" type="end">
+        <title>You wait and see</title>
+        <description>
+            Eh, what's up with this cloud? You hear a faint crakling sound, growing stronger and stronger...
+            After some time, you notice the origin of this sound: the small electric arcs that appear all around.
+            You look for a passage... But realise you're surrounded!
+            You close your eyes as your death is closing in.
+        </description>
+        <win value="false"/>
+    </step>
+    <step id="dream_keep_walking" type="multiChoice">
+        <title>You walk away from the black cloud</title>
+        <description>
+            After some minutes, you finally manage to remember: this was a thundercloud!
+            Few, you almost made a mistake by going there...
+            You finally stumble upon a door ajar.
+        </description>
+        <possibility>
+            <choice nextStep="dream_door_walk_in">Step through it.</choice>
+            <choice nextStep="dream_door_walk_around">Walk around it.</choice>
+        </possibility>
+    </step>
+    <step id="dream_door_walk_in" type="multiChoice">
+        <title>You enter an odd room</title>
+        <description>
+            This door was hidding the strangest room you've ever seen: the walls are made of forks and spoons.
+            In the middle of this room stands an old man.
+        </description>
+        <possibility>
+            <choice nextStep="dream_room_greet">Greet him.</choice>
+            <choice nextStep="dream_room_flee">Turn around, there's still time!</choice>
+        </possibility>
+    </step>
+    <step id="dream_room_greet" type="multiChoice">
+        <title>You greet the old man</title>
+        <description>
+            You quietly shout at the old man:
+            -"Hello?"
+            -"I...Satan..."
+            You can barely hear him over this distance.
+        </description>
+        <possibility>
+            <choice nextStep="dream_room_sit">Get closer, he seems to be a good lad.</choice>
+            <choice nextStep="dream_room_flee">Uh...? No way I'm staying here.</choice>
+        </possibility>
+    </step>
+    <step id="dream_room_flee" type="multiChoice">
+        <title>You run away</title>
+        <description>
+            You turn around, rushing to the door, when you realize that there's no door!
+            Has it ever been one?
+        </description>
+        <possibility>
+            <choice nextStep="dream_room_sit">Back to the old man.</choice>
+        </possibility>
+    </step>
+    <step id="dream_room_sit" type="riddle">
+        <title>You sit on the old man</title>
+        <description>
+            You sit on the old man.
+            Aren't you a bit too close? Who knows... At least, you can hear him now.
+            -"I like ven you satan the back."
+            Oh, he's crazy. Lucky you...
+            -"What am I?"
+            My my, he's now making riddles... What do you respond?
+        </description>
+        <possibility>
+            <choice nextStep="dream_room_answer_old">an old man</choice>
+            <choice nextStep="dream_room_answer_old">old man</choice>
+            <choice nextStep="dream_room_answer_old">old</choice>
+            <choice nextStep="dream_room_answer_joke">stupid</choice>
+            <choice nextStep="dream_room_answer_joke">useless</choice>
+            <choice nextStep="dream_room_answer_joke">lost</choice>
+            <choice nextStep="dream_room_answer_joke">senile</choice>
+            <choice nextStep="dream_room_answer_question">a question</choice>
+            <choice nextStep="dream_room_answer_question">question</choice>
+        </possibility>
+    </step>
+    <step id="dream_door_walk_around" type="memory">
+        <theme>default</theme>
+        <title>You walk around the door</title>
+        <description>
+            You find a set of cards, you decide to play a bit!
+        </description>
+        <difficulty>4</difficulty>
+        <nextStep value="wake_up"/>
+    </step>
+    <step id="dream_room_bad_answer" type="end">
+        <title>You couldn't manage an answer</title>
+        <description>
+            The old man seems angry.
+            He suddently get up, letting you fall on the floor, then manage to eat you.
+            Oh, he also was hungry :/
+        </description>
+        <win value="false"/>
+    </step>
+    <step id="dream_room_answer_old" type="end">
+        <title>You tell him he's old</title>
+        <description>
+            The cute baby look at you with an amused face.
+            He also manage to throw you out of the room.
+            The idea of taking a cloud full speed right in the face wake you up.
+        </description>
+        <win value="true"/>
+    </step>
+    <step id="dream_room_answer_question" type="end">
+        <title>You tell him it's a question</title>
+        <description>
+            The old man smiles at you. You seem to have found the right answer!
+            You are relieved, but you can't figure out why. I'm tirred and going to sleep.
+        </description>
+        <win value="true"/>
+    </step>
+    <step id="dream_room_answer_joke" type="end">
+        <title>You make fun of him</title>
+        <description>
+            You laught harder and harder, repeating your joke as it's the funniest thing you've ever said.
+            Then you realise you're in your bed, laugthing for no reason. Silly you. Shame.
+            You burry yourself.
+        </description>
+        <win value="false"/>
+    </step>
+    <step id="wake_up" type="end">
+        <title>You wake up</title>
+        <description>
+            You wake up from this odd dream, wondering where you pants got.
+        </description>
+        <win value="true"/>
+    </step>
+    <step id="dream_flap_arms" type="end">
+        <title>You flap your arms</title>
+        <description>
+            Congratz, you now look like the stupidest man ever.
+            Oh, and you found the ground.
+        </description>
+        <win value="false"/>
+    </step>
+    <step id="dream_enjoy_view" type="end">
+        <title>You enjoy the view</title>
+        <description>
+            You realise there's still something to do!
+            You cross your arms, and enjoy the ever-reducing view. Until you don't see anymore.
+        </description>
+        <win value="false"/>
+    </step>
+
+</story>

@@ -1,0 +1,23 @@
+<storyloader ng-if="!story.isLoaded"></storyloader>
+<div class="play" ng-show="story.isLoaded">
+    <div ng-include="'views/story-errors.html'"></div>
+
+    <div ng-if="currentStepHandler.error" ng-include="'views/error.html'"></div>
+
+    <div class="col-md-12 story">
+        <div class="row" ng-if="story.isLoaded">
+            <div class="row">
+                <h1 class="step-title" ng-if="title !== undefined" ng-bind-html="title" class="col-md-8"></h1>
+            </div>
+
+            <p ng-if="description !== undefined" class="lead" ng-bind-html="description"></p>
+        </div>
+
+        <div ng-include="currentStepHandler.template"></div>
+    </div>
+
+    <button  class="col-md-2 btn btn-danger btn-lg" ng-click="reset()">Restart</button>
+    <button ng-if="currentStepHandler.disableNextButton !== true" type="submit" class="col-md-4 btn btn-info btn-lg pull-right" ng-click="next() !== undefined && nextStep(next());" ng-enabled="next() !== undefined" ng-class="{disabled: next() === undefined}">
+        Next <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+    </button>
+</div>

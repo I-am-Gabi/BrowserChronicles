@@ -1,0 +1,15 @@
+<div class="row">
+    <p class="lead"><b>{{hint}}</b></p>
+    <button id="ok" type="submit" class="col-md-2 col-xs-3 btn btn-default btn-md" ng-click="currentStepHandler.checkAnswer();">
+        OK <span class="" aria-hidden="true"></span>
+    </button>
+    <label class="col-md-10 col-xs-9">
+        <input type="text" name="riddle.answer" ng-model="currentStepHandler.answer" class="form-control" onchange="focusOnEnter()" autofocus>
+        <script type="text/javascript">
+            function focusOnEnter() {
+                document.getElementById('ok').click();
+            }
+        </script>
+    </label>
+    <p class="lead" ng-if="currentStepHandler.error != undefined && !currentStepHandler.error"><i>Right answer. Continue...</i></p>
+</div>

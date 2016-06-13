@@ -1,0 +1,25 @@
+<div ng-if="!story.isLoaded">
+    <storyloader></storyloader>
+    <div class="edit">
+        <h3>Or start a new story</h3>
+        <form role="form" class="form-horizontal" ng-submit="story.create(newStory.title)">
+            <div class="form-group">
+                <label class="col-sm-1 control-label">
+                    Title:
+                </label>
+                <div class="col-sm-3">
+                    <input class="form-control" type="text" placeholder="Name your new adventure!" ng-model="newStory.title" />
+                </div>
+                <div class="col-sm-2">
+                    <input type="submit" value="Create" class="btn btn-default"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div ng-if="story.isLoaded" class="edit">
+    <div ng-include="'views/story-errors.html'"></div>
+    <h1>{{story.name}}</h1>
+    <story-graph></story-graph>
+    <story-edit></story-edit>
+</div>
